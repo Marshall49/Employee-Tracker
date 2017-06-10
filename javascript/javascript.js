@@ -1,15 +1,17 @@
 $(document).ready(function(){
 	 // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyCi-5431yihW5j_xjkjySpzZdaPbIsuqno",
-    authDomain: "first-project-c1524.firebaseapp.com",
-    databaseURL: "https://first-project-c1524.firebaseio.com",
-    projectId: "first-project-c1524",
-    storageBucket: "first-project-c1524.appspot.com",
-    messagingSenderId: "517375237734"
+    apiKey: "AIzaSyDci40EVflvarNKCegEzyMWH-Cbx43MXsc",
+    authDomain: "employee-tracker-17fbd.firebaseapp.com",
+    databaseURL: "https://employee-tracker-17fbd.firebaseio.com",
+    projectId: "employee-tracker-17fbd",
+    storageBucket: "employee-tracker-17fbd.appspot.com",
+    messagingSenderId: "515593099294"
   };
   firebase.initializeApp(config);
 
+  var database = firebase.database();
+  
    // Initial Values
     var name = "";
     var role = "";
@@ -42,6 +44,7 @@ $(document).ready(function(){
 
    // Firebase watcher + initial loader HINT: .on("value")
     database.ref().on("value", function(snapshot) {
+
 
      // Log everything that's coming out of snapshot
       console.log(snapshot.val());
